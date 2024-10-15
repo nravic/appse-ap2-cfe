@@ -149,340 +149,340 @@ LC_WDTEntry_t LC_DefaultWDT[LC_MAX_WATCHPOINTS] =
         .ComparisonValue.Unsigned32 = 95,
     },
 
-    /* #1 (unused) */
+    /* #1 WHE Capacitor B Charge >= 95 */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
-        .OperatorID                 = LC_NO_OPER,
-        .MessageID                  = 0,
-        .WatchpointOffset           = 0,
+        .DataType                   = LC_DATA_BYTE,
+        .OperatorID                 = LC_OPER_GE,
+        .MessageID                  = WHE_HK_TLM_MID,
+        .WatchpointOffset           = 16,
+        .BitMask                    = LC_NO_BITMASK,
+        .CustomFuncArgument         = 0,
+        .ResultAgeWhenStale         = 0,
+        .ComparisonValue.Unsigned32 = 95,
+    },
+
+    /* #2 WHE Capacitor A Charge <= 5 */
+    {
+        .DataType                   = LC_DATA_BYTE,
+        .OperatorID                 = LC_OPER_LE,
+        .MessageID                  = WHE_HK_TLM_MID,
+        .WatchpointOffset           = 14,
+        .BitMask                    = LC_NO_BITMASK,
+        .CustomFuncArgument         = 0,
+        .ResultAgeWhenStale         = 0,
+        .ComparisonValue.Unsigned32 = 5,
+    },
+
+    /* #3 WHE Capacitor B Charge <= 5 */
+    {
+        .DataType                   = LC_DATA_BYTE,
+        .OperatorID                 = LC_OPER_LE,
+        .MessageID                  = WHE_HK_TLM_MID,
+        .WatchpointOffset           = 16,
+        .BitMask                    = LC_NO_BITMASK,
+        .CustomFuncArgument         = 0,
+        .ResultAgeWhenStale         = 0,
+        .ComparisonValue.Unsigned32 = 5,
+    },
+
+    /* #4 WHE Capacitor A State == CHARGING */
+    {
+        .DataType                   = LC_DATA_BYTE,
+        .OperatorID                 = LC_OPER_EQ,
+        .MessageID                  = WHE_HK_TLM_MID,
+        .WatchpointOffset           = 15,
         .BitMask                    = LC_NO_BITMASK,
         .CustomFuncArgument         = 0,
         .ResultAgeWhenStale         = 0,
         .ComparisonValue.Unsigned32 = 0,
     },
 
-    /* #2 (unused) */
+    /* #5 WHE Capacitor B State == CHARGING */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
-        .OperatorID                 = LC_NO_OPER,
-        .MessageID                  = 0,
-        .WatchpointOffset           = 0,
+        .DataType                   = LC_DATA_BYTE,
+        .OperatorID                 = LC_OPER_EQ,
+        .MessageID                  = WHE_HK_TLM_MID,
+        .WatchpointOffset           = 17,
         .BitMask                    = LC_NO_BITMASK,
         .CustomFuncArgument         = 0,
         .ResultAgeWhenStale         = 0,
         .ComparisonValue.Unsigned32 = 0,
     },
 
-    /* #3 (unused) */
+    /* #6 WHE Capacitor A State == DISCHARGING */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
-        .OperatorID                 = LC_NO_OPER,
-        .MessageID                  = 0,
-        .WatchpointOffset           = 0,
+        .DataType                   = LC_DATA_BYTE,
+        .OperatorID                 = LC_OPER_EQ,
+        .MessageID                  = WHE_HK_TLM_MID,
+        .WatchpointOffset           = 15,
+        .BitMask                    = LC_NO_BITMASK,
+        .CustomFuncArgument         = 0,
+        .ResultAgeWhenStale         = 0,
+        .ComparisonValue.Unsigned32 = 1,
+    },
+
+    /* #7 WHE Capacitor B State == DISCHARGING */
+    {
+        .DataType                   = LC_DATA_BYTE,
+        .OperatorID                 = LC_OPER_EQ,
+        .MessageID                  = WHE_HK_TLM_MID,
+        .WatchpointOffset           = 17,
+        .BitMask                    = LC_NO_BITMASK,
+        .CustomFuncArgument         = 0,
+        .ResultAgeWhenStale         = 0,
+        .ComparisonValue.Unsigned32 = 1,
+    },
+
+    /* #8 WHE Capacitor A State == LEAKING */
+    {
+        .DataType                   = LC_DATA_BYTE,
+        .OperatorID                 = LC_OPER_EQ,
+        .MessageID                  = WHE_HK_TLM_MID,
+        .WatchpointOffset           = 15,
+        .BitMask                    = LC_NO_BITMASK,
+        .CustomFuncArgument         = 0,
+        .ResultAgeWhenStale         = 0,
+        .ComparisonValue.Unsigned32 = 2,
+    },
+
+    /* #9 WHE Capacitor B State == LEAKING */
+    {
+        .DataType                   = LC_DATA_BYTE,
+        .OperatorID                 = LC_OPER_EQ,
+        .MessageID                  = WHE_HK_TLM_MID,
+        .WatchpointOffset           = 17,
+        .BitMask                    = LC_NO_BITMASK,
+        .CustomFuncArgument         = 0,
+        .ResultAgeWhenStale         = 0,
+        .ComparisonValue.Unsigned32 = 2,
+    },
+
+    /* #10 WHE Capacitor A State == BROKEN */
+    {
+        .DataType                   = LC_DATA_BYTE,
+        .OperatorID                 = LC_OPER_EQ,
+        .MessageID                  = WHE_HK_TLM_MID,
+        .WatchpointOffset           = 15,
+        .BitMask                    = LC_NO_BITMASK,
+        .CustomFuncArgument         = 0,
+        .ResultAgeWhenStale         = 0,
+        .ComparisonValue.Unsigned32 = 3,
+    },
+
+    /* #11 WHE Capacitor B State == BROKEN */
+    {
+        .DataType                   = LC_DATA_BYTE,
+        .OperatorID                 = LC_OPER_EQ,
+        .MessageID                  = WHE_HK_TLM_MID,
+        .WatchpointOffset           = 17,
+        .BitMask                    = LC_NO_BITMASK,
+        .CustomFuncArgument         = 0,
+        .ResultAgeWhenStale         = 0,
+        .ComparisonValue.Unsigned32 = 3,
+    },
+
+    /* #12 WHE Temperature >= 0 */
+    {
+        .DataType                   = LC_DATA_BYTE,
+        .OperatorID                 = LC_OPER_GE,
+        .MessageID                  = WHE_HK_TLM_MID,
+        .WatchpointOffset           = 19,
         .BitMask                    = LC_NO_BITMASK,
         .CustomFuncArgument         = 0,
         .ResultAgeWhenStale         = 0,
         .ComparisonValue.Unsigned32 = 0,
     },
 
-    /* #4 (unused) */
+    /* #13 WHE Temperature >= 10 */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
-        .OperatorID                 = LC_NO_OPER,
-        .MessageID                  = 0,
-        .WatchpointOffset           = 0,
+        .DataType                   = LC_DATA_BYTE,
+        .OperatorID                 = LC_OPER_GE,
+        .MessageID                  = WHE_HK_TLM_MID,
+        .WatchpointOffset           = 19,
+        .BitMask                    = LC_NO_BITMASK,
+        .CustomFuncArgument         = 0,
+        .ResultAgeWhenStale         = 0,
+        .ComparisonValue.Unsigned32 = 10,
+    },
+
+    /* #14 WHE Temperature <= 20 */
+    {
+        .DataType                   = LC_DATA_BYTE,
+        .OperatorID                 = LC_OPER_LE,
+        .MessageID                  = WHE_HK_TLM_MID,
+        .WatchpointOffset           = 19,
+        .BitMask                    = LC_NO_BITMASK,
+        .CustomFuncArgument         = 0,
+        .ResultAgeWhenStale         = 0,
+        .ComparisonValue.Unsigned32 = 20,
+    },
+
+    /* #15 WHE Temperature <= 35 */
+    {
+        .DataType                   = LC_DATA_BYTE,
+        .OperatorID                 = LC_OPER_LE,
+        .MessageID                  = WHE_HK_TLM_MID,
+        .WatchpointOffset           = 19,
+        .BitMask                    = LC_NO_BITMASK,
+        .CustomFuncArgument         = 0,
+        .ResultAgeWhenStale         = 0,
+        .ComparisonValue.Unsigned32 = 35,
+    },
+
+    /* #16 WHE SBC State == OFF */
+    {
+        .DataType                   = LC_DATA_BYTE,
+        .OperatorID                 = LC_OPER_EQ,
+        .MessageID                  = WHE_HK_TLM_MID,
+        .WatchpointOffset           = 18,
         .BitMask                    = LC_NO_BITMASK,
         .CustomFuncArgument         = 0,
         .ResultAgeWhenStale         = 0,
         .ComparisonValue.Unsigned32 = 0,
     },
 
-    /* #5 (unused) */
+    /* #17 WHE SBC State == POWERED */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
-        .OperatorID                 = LC_NO_OPER,
-        .MessageID                  = 0,
-        .WatchpointOffset           = 0,
+        .DataType                   = LC_DATA_BYTE,
+        .OperatorID                 = LC_OPER_EQ,
+        .MessageID                  = WHE_HK_TLM_MID,
+        .WatchpointOffset           = 18,
+        .BitMask                    = LC_NO_BITMASK,
+        .CustomFuncArgument         = 0,
+        .ResultAgeWhenStale         = 0,
+        .ComparisonValue.Unsigned32 = 1,
+    },
+
+    /* #18 WHE SBC State == OBSERVING */
+    {
+        .DataType                   = LC_DATA_BYTE,
+        .OperatorID                 = LC_OPER_EQ,
+        .MessageID                  = WHE_HK_TLM_MID,
+        .WatchpointOffset           = 18,
+        .BitMask                    = LC_NO_BITMASK,
+        .CustomFuncArgument         = 0,
+        .ResultAgeWhenStale         = 0,
+        .ComparisonValue.Unsigned32 = 2,
+    },
+
+    /* #19 WHE SBC State == ERROR */
+    {
+        .DataType                   = LC_DATA_BYTE,
+        .OperatorID                 = LC_OPER_EQ,
+        .MessageID                  = WHE_HK_TLM_MID,
+        .WatchpointOffset           = 18,
+        .BitMask                    = LC_NO_BITMASK,
+        .CustomFuncArgument         = 0,
+        .ResultAgeWhenStale         = 0,
+        .ComparisonValue.Unsigned32 = 3,
+    },
+
+    /* #20 WHE Louver State == CLOSED */
+    {
+        .DataType                   = LC_DATA_BYTE,
+        .OperatorID                 = LC_OPER_EQ,
+        .MessageID                  = WHE_HK_TLM_MID,
+        .WatchpointOffset           = 20,
         .BitMask                    = LC_NO_BITMASK,
         .CustomFuncArgument         = 0,
         .ResultAgeWhenStale         = 0,
         .ComparisonValue.Unsigned32 = 0,
     },
 
-    /* #6 (unused) */
+    /* #21 WHE Louver State == OPEN */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
-        .OperatorID                 = LC_NO_OPER,
-        .MessageID                  = 0,
-        .WatchpointOffset           = 0,
+        .DataType                   = LC_DATA_BYTE,
+        .OperatorID                 = LC_OPER_EQ,
+        .MessageID                  = WHE_HK_TLM_MID,
+        .WatchpointOffset           = 20,
+        .BitMask                    = LC_NO_BITMASK,
+        .CustomFuncArgument         = 0,
+        .ResultAgeWhenStale         = 0,
+        .ComparisonValue.Unsigned32 = 1,
+    },
+
+    /* #22 WHE Heater State == OFF  */
+    {
+        .DataType                   = LC_DATA_BYTE,
+        .OperatorID                 = LC_OPER_EQ,
+        .MessageID                  = WHE_HK_TLM_MID,
+        .WatchpointOffset           = 21,
         .BitMask                    = LC_NO_BITMASK,
         .CustomFuncArgument         = 0,
         .ResultAgeWhenStale         = 0,
         .ComparisonValue.Unsigned32 = 0,
     },
 
-    /* #7 (unused) */
+    /* #23 WHE Heater State == ON */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
-        .OperatorID                 = LC_NO_OPER,
-        .MessageID                  = 0,
-        .WatchpointOffset           = 0,
+        .DataType                   = LC_DATA_BYTE,
+        .OperatorID                 = LC_OPER_EQ,
+        .MessageID                  = WHE_HK_TLM_MID,
+        .WatchpointOffset           = 21,
+        .BitMask                    = LC_NO_BITMASK,
+        .CustomFuncArgument         = 0,
+        .ResultAgeWhenStale         = 0,
+        .ComparisonValue.Unsigned32 = 1,
+    },
+
+    /* #24 WHE Active Capacitor == A */
+    {
+        .DataType                   = LC_DATA_BYTE,
+        .OperatorID                 = LC_OPER_EQ,
+        .MessageID                  = WHE_HK_TLM_MID,
+        .WatchpointOffset           = 22,
         .BitMask                    = LC_NO_BITMASK,
         .CustomFuncArgument         = 0,
         .ResultAgeWhenStale         = 0,
         .ComparisonValue.Unsigned32 = 0,
     },
 
-    /* #8 (unused) */
+    /* #25 WHE Active Capacitor == B */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
-        .OperatorID                 = LC_NO_OPER,
-        .MessageID                  = 0,
-        .WatchpointOffset           = 0,
+        .DataType                   = LC_DATA_BYTE,
+        .OperatorID                 = LC_OPER_EQ,
+        .MessageID                  = WHE_HK_TLM_MID,
+        .WatchpointOffset           = 22,
+        .BitMask                    = LC_NO_BITMASK,
+        .CustomFuncArgument         = 0,
+        .ResultAgeWhenStale         = 0,
+        .ComparisonValue.Unsigned32 = 1,
+    },
+
+    /* #26 WHE Damage State == NONE */
+    {
+        .DataType                   = LC_DATA_BYTE,
+        .OperatorID                 = LC_OPER_EQ,
+        .MessageID                  = WHE_HK_TLM_MID,
+        .WatchpointOffset           = 23,
         .BitMask                    = LC_NO_BITMASK,
         .CustomFuncArgument         = 0,
         .ResultAgeWhenStale         = 0,
         .ComparisonValue.Unsigned32 = 0,
     },
 
-    /* #9 (unused) */
+    /* #27 WHE Damage State == MINOR */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
-        .OperatorID                 = LC_NO_OPER,
-        .MessageID                  = 0,
-        .WatchpointOffset           = 0,
+        .DataType                   = LC_DATA_BYTE,
+        .OperatorID                 = LC_OPER_EQ,
+        .MessageID                  = WHE_HK_TLM_MID,
+        .WatchpointOffset           = 23,
         .BitMask                    = LC_NO_BITMASK,
         .CustomFuncArgument         = 0,
         .ResultAgeWhenStale         = 0,
-        .ComparisonValue.Unsigned32 = 0,
+        .ComparisonValue.Unsigned32 = 1,
     },
 
-    /* #10 (unused) */
+    /* #28 WHE Damage State == MAJOR */
     {
-        .DataType                   = LC_WATCH_NOT_USED,
-        .OperatorID                 = LC_NO_OPER,
-        .MessageID                  = 0,
-        .WatchpointOffset           = 0,
+        .DataType                   = LC_DATA_BYTE,
+        .OperatorID                 = LC_OPER_EQ,
+        .MessageID                  = WHE_HK_TLM_MID,
+        .WatchpointOffset           = 23,
         .BitMask                    = LC_NO_BITMASK,
         .CustomFuncArgument         = 0,
         .ResultAgeWhenStale         = 0,
-        .ComparisonValue.Unsigned32 = 0,
-    },
-
-    /* #11 (unused) */
-    {
-        .DataType                   = LC_WATCH_NOT_USED,
-        .OperatorID                 = LC_NO_OPER,
-        .MessageID                  = 0,
-        .WatchpointOffset           = 0,
-        .BitMask                    = LC_NO_BITMASK,
-        .CustomFuncArgument         = 0,
-        .ResultAgeWhenStale         = 0,
-        .ComparisonValue.Unsigned32 = 0,
-    },
-
-    /* #12 (unused) */
-    {
-        .DataType                   = LC_WATCH_NOT_USED,
-        .OperatorID                 = LC_NO_OPER,
-        .MessageID                  = 0,
-        .WatchpointOffset           = 0,
-        .BitMask                    = LC_NO_BITMASK,
-        .CustomFuncArgument         = 0,
-        .ResultAgeWhenStale         = 0,
-        .ComparisonValue.Unsigned32 = 0,
-    },
-
-    /* #13 (unused) */
-    {
-        .DataType                   = LC_WATCH_NOT_USED,
-        .OperatorID                 = LC_NO_OPER,
-        .MessageID                  = 0,
-        .WatchpointOffset           = 0,
-        .BitMask                    = LC_NO_BITMASK,
-        .CustomFuncArgument         = 0,
-        .ResultAgeWhenStale         = 0,
-        .ComparisonValue.Unsigned32 = 0,
-    },
-
-    /* #14 (unused) */
-    {
-        .DataType                   = LC_WATCH_NOT_USED,
-        .OperatorID                 = LC_NO_OPER,
-        .MessageID                  = 0,
-        .WatchpointOffset           = 0,
-        .BitMask                    = LC_NO_BITMASK,
-        .CustomFuncArgument         = 0,
-        .ResultAgeWhenStale         = 0,
-        .ComparisonValue.Unsigned32 = 0,
-    },
-
-    /* #15 (unused) */
-    {
-        .DataType                   = LC_WATCH_NOT_USED,
-        .OperatorID                 = LC_NO_OPER,
-        .MessageID                  = 0,
-        .WatchpointOffset           = 0,
-        .BitMask                    = LC_NO_BITMASK,
-        .CustomFuncArgument         = 0,
-        .ResultAgeWhenStale         = 0,
-        .ComparisonValue.Unsigned32 = 0,
-    },
-
-    /* #16 (unused) */
-    {
-        .DataType                   = LC_WATCH_NOT_USED,
-        .OperatorID                 = LC_NO_OPER,
-        .MessageID                  = 0,
-        .WatchpointOffset           = 0,
-        .BitMask                    = LC_NO_BITMASK,
-        .CustomFuncArgument         = 0,
-        .ResultAgeWhenStale         = 0,
-        .ComparisonValue.Unsigned32 = 0,
-    },
-
-    /* #17 (unused) */
-    {
-        .DataType                   = LC_WATCH_NOT_USED,
-        .OperatorID                 = LC_NO_OPER,
-        .MessageID                  = 0,
-        .WatchpointOffset           = 0,
-        .BitMask                    = LC_NO_BITMASK,
-        .CustomFuncArgument         = 0,
-        .ResultAgeWhenStale         = 0,
-        .ComparisonValue.Unsigned32 = 0,
-    },
-
-    /* #18 (unused) */
-    {
-        .DataType                   = LC_WATCH_NOT_USED,
-        .OperatorID                 = LC_NO_OPER,
-        .MessageID                  = 0,
-        .WatchpointOffset           = 0,
-        .BitMask                    = LC_NO_BITMASK,
-        .CustomFuncArgument         = 0,
-        .ResultAgeWhenStale         = 0,
-        .ComparisonValue.Unsigned32 = 0,
-    },
-
-    /* #19 (unused) */
-    {
-        .DataType                   = LC_WATCH_NOT_USED,
-        .OperatorID                 = LC_NO_OPER,
-        .MessageID                  = 0,
-        .WatchpointOffset           = 0,
-        .BitMask                    = LC_NO_BITMASK,
-        .CustomFuncArgument         = 0,
-        .ResultAgeWhenStale         = 0,
-        .ComparisonValue.Unsigned32 = 0,
-    },
-
-    /* #20 (unused) */
-    {
-        .DataType                   = LC_WATCH_NOT_USED,
-        .OperatorID                 = LC_NO_OPER,
-        .MessageID                  = 0,
-        .WatchpointOffset           = 0,
-        .BitMask                    = LC_NO_BITMASK,
-        .CustomFuncArgument         = 0,
-        .ResultAgeWhenStale         = 0,
-        .ComparisonValue.Unsigned32 = 0,
-    },
-
-    /* #21 (unused) */
-    {
-        .DataType                   = LC_WATCH_NOT_USED,
-        .OperatorID                 = LC_NO_OPER,
-        .MessageID                  = 0,
-        .WatchpointOffset           = 0,
-        .BitMask                    = LC_NO_BITMASK,
-        .CustomFuncArgument         = 0,
-        .ResultAgeWhenStale         = 0,
-        .ComparisonValue.Unsigned32 = 0,
-    },
-
-    /* #22 (unused) */
-    {
-        .DataType                   = LC_WATCH_NOT_USED,
-        .OperatorID                 = LC_NO_OPER,
-        .MessageID                  = 0,
-        .WatchpointOffset           = 0,
-        .BitMask                    = LC_NO_BITMASK,
-        .CustomFuncArgument         = 0,
-        .ResultAgeWhenStale         = 0,
-        .ComparisonValue.Unsigned32 = 0,
-    },
-
-    /* #23 (unused) */
-    {
-        .DataType                   = LC_WATCH_NOT_USED,
-        .OperatorID                 = LC_NO_OPER,
-        .MessageID                  = 0,
-        .WatchpointOffset           = 0,
-        .BitMask                    = LC_NO_BITMASK,
-        .CustomFuncArgument         = 0,
-        .ResultAgeWhenStale         = 0,
-        .ComparisonValue.Unsigned32 = 0,
-    },
-
-    /* #24 (unused) */
-    {
-        .DataType                   = LC_WATCH_NOT_USED,
-        .OperatorID                 = LC_NO_OPER,
-        .MessageID                  = 0,
-        .WatchpointOffset           = 0,
-        .BitMask                    = LC_NO_BITMASK,
-        .CustomFuncArgument         = 0,
-        .ResultAgeWhenStale         = 0,
-        .ComparisonValue.Unsigned32 = 0,
-    },
-
-    /* #25 (unused) */
-    {
-        .DataType                   = LC_WATCH_NOT_USED,
-        .OperatorID                 = LC_NO_OPER,
-        .MessageID                  = 0,
-        .WatchpointOffset           = 0,
-        .BitMask                    = LC_NO_BITMASK,
-        .CustomFuncArgument         = 0,
-        .ResultAgeWhenStale         = 0,
-        .ComparisonValue.Unsigned32 = 0,
-    },
-
-    /* #26 (unused) */
-    {
-        .DataType                   = LC_WATCH_NOT_USED,
-        .OperatorID                 = LC_NO_OPER,
-        .MessageID                  = 0,
-        .WatchpointOffset           = 0,
-        .BitMask                    = LC_NO_BITMASK,
-        .CustomFuncArgument         = 0,
-        .ResultAgeWhenStale         = 0,
-        .ComparisonValue.Unsigned32 = 0,
-    },
-
-    /* #27 (unused) */
-    {
-        .DataType                   = LC_WATCH_NOT_USED,
-        .OperatorID                 = LC_NO_OPER,
-        .MessageID                  = 0,
-        .WatchpointOffset           = 0,
-        .BitMask                    = LC_NO_BITMASK,
-        .CustomFuncArgument         = 0,
-        .ResultAgeWhenStale         = 0,
-        .ComparisonValue.Unsigned32 = 0,
-    },
-
-    /* #28 (unused) */
-    {
-        .DataType                   = LC_WATCH_NOT_USED,
-        .OperatorID                 = LC_NO_OPER,
-        .MessageID                  = 0,
-        .WatchpointOffset           = 0,
-        .BitMask                    = LC_NO_BITMASK,
-        .CustomFuncArgument         = 0,
-        .ResultAgeWhenStale         = 0,
-        .ComparisonValue.Unsigned32 = 0,
+        .ComparisonValue.Unsigned32 = 2,
     },
 
     /* #29 (unused) */
