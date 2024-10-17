@@ -252,47 +252,47 @@ LC_ADTEntry_t LC_DefaultADT[LC_MAX_ACTIONPOINTS] = {
          {/* (WP_0) */
           0, LC_RPN_EQUAL}},
 
-    /* #2 (unused) */
+    /* #2 WHE Discharge Capacitor B */
     {.DefaultState = LC_ACTION_NOT_USED,
      .MaxPassiveEvents = 0,
      .MaxPassFailEvents = 0,
      .MaxFailPassEvents = 0,
-     .RTSId = 0,
+     .RTSId = WHE_CAP_B_DISCHARGE_CC,
      .MaxFailsBeforeRTS = 0,
      .EventType = CFE_EVS_INFORMATION,
      .EventID = 0,
      .EventText = {" "},
      .RPNEquation =
-         {/* (WP_0) */
-          0, LC_RPN_EQUAL}},
+         {/* (WP_1) */
+          1, LC_RPN_EQUAL}},
 
-    /* #3 (unused) */
+    /* #3 WHE Switch Active Capacitor to B */
     {.DefaultState = LC_ACTION_NOT_USED,
      .MaxPassiveEvents = 0,
      .MaxPassFailEvents = 0,
      .MaxFailPassEvents = 0,
-     .RTSId = 0,
+     .RTSId = WHE_CAP_B_ACTIVE_CC,
      .MaxFailsBeforeRTS = 0,
      .EventType = CFE_EVS_INFORMATION,
      .EventID = 0,
-     .EventText = {" "},
+     .EventText = {"Switching Active Capacitor to B"},
      .RPNEquation =
-         {/* (WP_0) */
-          0, LC_RPN_EQUAL}},
+         {/* (WP_2) */
+          2, LC_RPN_EQUAL}},
 
-    /* #4 (unused) */
+    /* #4 WHE Switch Active Capacitor to A */
     {.DefaultState = LC_ACTION_NOT_USED,
      .MaxPassiveEvents = 0,
      .MaxPassFailEvents = 0,
      .MaxFailPassEvents = 0,
-     .RTSId = 0,
+     .RTSId = WHE_CAP_A_ACTIVE_CC,
      .MaxFailsBeforeRTS = 0,
      .EventType = CFE_EVS_INFORMATION,
      .EventID = 0,
-     .EventText = {" "},
+     .EventText = {"Switching Active Capacitor to A"},
      .RPNEquation =
          {/* (WP_0) */
-          0, LC_RPN_EQUAL}},
+          3, LC_RPN_EQUAL}},
 
     /* #5 (unused) */
     {.DefaultState = LC_ACTION_NOT_USED,
