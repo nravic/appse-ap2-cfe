@@ -224,119 +224,107 @@ static CFE_TBL_FileDef_t CFE_TBL_FileDef __attribute__((__used__)) = {
 ** Default actionpoint definition table (ADT) data
 */
 LC_ADTEntry_t LC_DefaultADT[LC_MAX_ACTIONPOINTS] = {
-    /* #0 (unused) */
-    {.DefaultState = LC_ACTION_NOT_USED,
-     .MaxPassiveEvents = 0,
-     .MaxPassFailEvents = 0,
-     .MaxFailPassEvents = 0,
-     .RTSId = 0,
-     .MaxFailsBeforeRTS = 0,
-     .EventType = CFE_EVS_INFORMATION,
-     .EventID = 0,
-     .EventText = {" "},
-     .RPNEquation =
-         {/* (WP_0) */
-          0, LC_RPN_EQUAL}},
-
-    /* #1 WHE Discharge Capacitor A */
-    {.DefaultState = LC_APSTATE_CTIVE,
+    /* #0 Capacitor A Charge > 97% */
+    {.DefaultState = LC_APSTATE_ACTIVE,
      .MaxPassiveEvents = 0,
      .MaxPassFailEvents = 0,
      .MaxFailPassEvents = 0,
      .RTSId = WHE_CAP_A_DISCHARGE_CC,
      .MaxFailsBeforeRTS = 1,
      .EventType = CFE_EVS_INFORMATION,
+     .EventID = 1000,
+     .EventText = {"Discharge Capacitor A (in response to overcharge)"},
+     .RPNEquation = {0, LC_RPN_EQUAL}},
+
+    /* #1 Capacitor B Charge > 97% */
+    {.DefaultState = LC_APSTATE_ACTIVE,
+     .MaxPassiveEvents = 0,
+     .MaxPassFailEvents = 0,
+     .MaxFailPassEvents = 0,
+     .RTSId = WHE_CAP_B_DISCHARGE_CC,
+     .MaxFailsBeforeRTS = 1,
+     .EventType = CFE_EVS_INFORMATION,
      .EventID = 1001,
-     .EventText = {"Discharge Capacitor A"},
-     .RPNEquation =
-         {/* (WP_0) */
-          0, LC_RPN_EQUAL}},
+     .EventText = {"Discharge Capacitor B (in response to overcharge)"},
+     .RPNEquation = {1, LC_RPN_EQUAL}},
 
-    /* #2 (unused) */
-    {.DefaultState = LC_ACTION_NOT_USED,
+    /* #2 Capacitor A Charge < 5% */
+    {.DefaultState = LC_APSTATE_ACTIVE,
      .MaxPassiveEvents = 0,
      .MaxPassFailEvents = 0,
      .MaxFailPassEvents = 0,
-     .RTSId = 0,
-     .MaxFailsBeforeRTS = 0,
+     .RTSId = WHE_CAP_A_ACTIVE_CC,
+     .MaxFailsBeforeRTS = 1,
      .EventType = CFE_EVS_INFORMATION,
-     .EventID = 0,
-     .EventText = {" "},
-     .RPNEquation =
-         {/* (WP_0) */
-          0, LC_RPN_EQUAL}},
+     .EventID = 1002,
+     .EventText = {"Set Capacitor A to active (in response to undercharge)"},
+     .RPNEquation = {2, LC_RPN_EQUAL}},
 
-    /* #3 (unused) */
-    {.DefaultState = LC_ACTION_NOT_USED,
+    /* #3 Capacitor B Charge < 5% */
+    {.DefaultState = LC_APSTATE_ACTIVE,
      .MaxPassiveEvents = 0,
      .MaxPassFailEvents = 0,
      .MaxFailPassEvents = 0,
-     .RTSId = 0,
-     .MaxFailsBeforeRTS = 0,
+     .RTSId = WHE_CAP_B_ACTIVE_CC,
+     .MaxFailsBeforeRTS = 1,
      .EventType = CFE_EVS_INFORMATION,
-     .EventID = 0,
-     .EventText = {" "},
-     .RPNEquation =
-         {/* (WP_0) */
-          0, LC_RPN_EQUAL}},
+     .EventID = 1003,
+     .EventText = {"Set Capacitor B to active (in response to undercharge)"},
+     .RPNEquation = {3, LC_RPN_EQUAL}},
 
-    /* #4 (unused) */
-    {.DefaultState = LC_ACTION_NOT_USED,
+    /* #4 Capacitor A Leaking */
+    {.DefaultState = LC_APSTATE_ACTIVE,
      .MaxPassiveEvents = 0,
      .MaxPassFailEvents = 0,
      .MaxFailPassEvents = 0,
-     .RTSId = 0,
-     .MaxFailsBeforeRTS = 0,
+     .RTSId = WHE_CAP_B_ACTIVE_CC,
+     .MaxFailsBeforeRTS = 1,
      .EventType = CFE_EVS_INFORMATION,
-     .EventID = 0,
-     .EventText = {" "},
-     .RPNEquation =
-         {/* (WP_0) */
-          0, LC_RPN_EQUAL}},
+     .EventID = 1004,
+     .EventText =
+         {"Set Capacitor B to active (in response to Capacitor A leaking)"},
+     .RPNEquation = {8, LC_RPN_EQUAL}},
 
-    /* #5 (unused) */
-    {.DefaultState = LC_ACTION_NOT_USED,
+    /* #5 Capacitor B Leaking */
+    {.DefaultState = LC_APSTATE_ACTIVE,
      .MaxPassiveEvents = 0,
      .MaxPassFailEvents = 0,
      .MaxFailPassEvents = 0,
-     .RTSId = 0,
-     .MaxFailsBeforeRTS = 0,
+     .RTSId = WHE_CAP_A_ACTIVE_CC,
+     .MaxFailsBeforeRTS = 1,
      .EventType = CFE_EVS_INFORMATION,
-     .EventID = 0,
-     .EventText = {" "},
-     .RPNEquation =
-         {/* (WP_0) */
-          0, LC_RPN_EQUAL}},
+     .EventID = 1005,
+     .EventText =
+         {"Set Capacitor A to active (in response to Capacitor B leaking)"},
+     .RPNEquation = {9, LC_RPN_EQUAL}},
 
-    /* #6 (unused) */
-    {.DefaultState = LC_ACTION_NOT_USED,
+    /* #6 Capacitor A Broken */
+    {.DefaultState = LC_APSTATE_ACTIVE,
      .MaxPassiveEvents = 0,
      .MaxPassFailEvents = 0,
      .MaxFailPassEvents = 0,
-     .RTSId = 0,
-     .MaxFailsBeforeRTS = 0,
+     .RTSId = WHE_CAP_B_ACTIVE_CC,
+     .MaxFailsBeforeRTS = 1,
      .EventType = CFE_EVS_INFORMATION,
-     .EventID = 0,
-     .EventText = {" "},
-     .RPNEquation =
-         {/* (WP_0) */
-          0, LC_RPN_EQUAL}},
+     .EventID = 1006,
+     .EventText =
+         {"Set Capacitor B to active (in response to Capacitor A broken)"},
+     .RPNEquation = {10, LC_RPN_EQUAL}},
 
-    /* #7 (unused) */
-    {.DefaultState = LC_ACTION_NOT_USED,
+    /* #7 Capacitor B Broken */
+    {.DefaultState = LC_APSTATE_ACTIVE,
      .MaxPassiveEvents = 0,
      .MaxPassFailEvents = 0,
      .MaxFailPassEvents = 0,
-     .RTSId = 0,
-     .MaxFailsBeforeRTS = 0,
+     .RTSId = WHE_CAP_A_ACTIVE_CC,
+     .MaxFailsBeforeRTS = 1,
      .EventType = CFE_EVS_INFORMATION,
-     .EventID = 0,
-     .EventText = {" "},
-     .RPNEquation =
-         {/* (WP_0) */
-          0, LC_RPN_EQUAL}},
+     .EventID = 1007,
+     .EventText =
+         {"Set Capacitor A to active (in response to Capacitor B broken)"},
+     .RPNEquation = {11, LC_RPN_EQUAL}},
 
-    /* #8 (unused) */
+    /* #8 */
     {.DefaultState = LC_ACTION_NOT_USED,
      .MaxPassiveEvents = 0,
      .MaxPassFailEvents = 0,
