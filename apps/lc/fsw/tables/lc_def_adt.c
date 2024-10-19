@@ -332,7 +332,7 @@ LC_ADTEntry_t LC_DefaultADT[LC_MAX_ACTIONPOINTS] = {
      .RTSId = WHE_THERM_LOUVER_OPEN_CC,
      .MaxFailsBeforeRTS = 1,
      .EventType = CFE_EVS_INFORMATION,
-     .EventID = 0,
+     .EventID = 1008,
      .EventText = {"Open louver when observation temps > 20C "},
      .RPNEquation =
          {/* (WP_16) && (WP_20) */
@@ -346,13 +346,13 @@ LC_ADTEntry_t LC_DefaultADT[LC_MAX_ACTIONPOINTS] = {
      .RTSId = WHE_THERM_HTR_OFF_CC,
      .MaxFailsBeforeRTS = 1,
      .EventType = CFE_EVS_INFORMATION,
-     .EventID = 0,
+     .EventID = 1009,
      .EventText = {"Turn off heater if on when observation temps > 20C "},
      .RPNEquation =
          {/* (WP_16) && (WP_20) && (WP_25)*/
           16, 20, LC_RPN_AND, 25, LC_RPN_AND, LC_RPN_EQUAL}},
 
-    /* #9 Thermal Environment (observation) <= 10C */
+    /* #10 Thermal Environment (observation) <= 10C */
     {.DefaultState = LC_APSTATE_ACTIVE,
      .MaxPassiveEvents = 0,
      .MaxPassFailEvents = 0,
@@ -360,14 +360,14 @@ LC_ADTEntry_t LC_DefaultADT[LC_MAX_ACTIONPOINTS] = {
      .RTSId = WHE_THERM_HTR_ON_CC,
      .MaxFailsBeforeRTS = 1,
      .EventType = CFE_EVS_INFORMATION,
-     .EventID = 0,
+     .EventID = 1010,
      .EventText =
          {"Turn on heater to increase internal temp when temp is <= 10C"},
      .RPNEquation =
          {/* (WP_13) && (WP_20) */
           13, 20, LC_RPN_AND, LC_RPN_EQUAL}},
 
-    /* #10 Thermal Environment (observation) <= 10C */
+    /* #11 Thermal Environment (observation) <= 10C */
     {.DefaultState = LC_APSTATE_ACTIVE,
      .MaxPassiveEvents = 0,
      .MaxPassFailEvents = 0,
@@ -375,13 +375,13 @@ LC_ADTEntry_t LC_DefaultADT[LC_MAX_ACTIONPOINTS] = {
      .RTSId = WHE_THERM_LOUVER_CLOSE_CC,
      .MaxFailsBeforeRTS = 1,
      .EventType = CFE_EVS_INFORMATION,
-     .EventID = 0,
+     .EventID = 1011,
      .EventText = {"Close louver if open when temp is <= 10C"},
      .RPNEquation =
          {/* (WP_0) */
           13, 20, LC_RPN_AND, 23, LC_RPN_AND, LC_RPN_EQUAL}},
 
-    /* #11 Thermal Environment (powered) >= 35C */
+    /* #12 Thermal Environment (powered) >= 35C */
     {.DefaultState = LC_APSTATE_ACTIVE,
      .MaxPassiveEvents = 0,
      .MaxPassFailEvents = 0,
@@ -389,13 +389,13 @@ LC_ADTEntry_t LC_DefaultADT[LC_MAX_ACTIONPOINTS] = {
      .RTSId = WHE_TERM_LOUVER_OPEN_CC,
      .MaxFailsBeforeRTS = 1,
      .EventType = CFE_EVS_INFORMATION,
-     .EventID = 0,
+     .EventID = 1012,
      .EventText = {"Open louver to dissipate temp when powered temp > 35C"},
      .RPNEquation =
          {/* (WP_17) && (WP_19) */
           17, 19, LC_RPN_AND, LC_RPN_EQUAL}},
 
-    /* #12 Thermal Environment (powered) >= 35C */
+    /* #13 Thermal Environment (powered) >= 35C */
     {.DefaultState = LC_APSTATE_ACTIVE,
      .MaxPassiveEvents = 0,
      .MaxPassFailEvents = 0,
@@ -403,13 +403,13 @@ LC_ADTEntry_t LC_DefaultADT[LC_MAX_ACTIONPOINTS] = {
      .RTSId = WHE_THERM_HTR_OFF_CC,
      .MaxFailsBeforeRTS = 1,
      .EventType = CFE_EVS_INFORMATION,
-     .EventID = 0,
+     .EventID = 1013,
      .EventText = {"Turn heater off if on when powered temp > 35C"},
      .RPNEquation =
          {/* (WP_17) && (WP_19) && (WP_25) */
           17, 19, LC_RPN_AND, 25, LC_RPN_AND, LC_RPN_EQUAL}},
 
-    /* #13 Thermal Environment (powered) <= 0C */
+    /* #14 Thermal Environment (powered) <= 0C */
     {.DefaultState = LC_APSTATE_ACTIVE,
      .MaxPassiveEvents = 0,
      .MaxPassFailEvents = 0,
@@ -417,13 +417,13 @@ LC_ADTEntry_t LC_DefaultADT[LC_MAX_ACTIONPOINTS] = {
      .RTSId = WHE_THERM_HTR_ON_CC,
      .MaxFailsBeforeRTS = 1,
      .EventType = CFE_EVS_INFORMATION,
-     .EventID = 0,
+     .EventID = 1014,
      .EventText = {"Turn heater on when powered temp < 0C"},
      .RPNEquation =
          {/* (WP_12) && (WP_19) */
           12, 19, LC_RPN_AND, LC_RPN_EQUAL}},
 
-    /* #14 Thermal Environment (powered) <= 0 */
+    /* #15 Thermal Environment (powered) <= 0 */
     {.DefaultState = LC_APSTATE_ACTIVE,
      .MaxPassiveEvents = 0,
      .MaxPassFailEvents = 0,
@@ -431,13 +431,13 @@ LC_ADTEntry_t LC_DefaultADT[LC_MAX_ACTIONPOINTS] = {
      .RTSId = WHE_THERM_LOUVER_OPEN_CC,
      .MaxFailsBeforeRTS = 1,
      .EventType = CFE_EVS_INFORMATION,
-     .EventID = 0,
+     .EventID = 1015,
      .EventText = {"Open louver if closed when powered temp < 0C"},
      .RPNEquation =
          {/* (WP_12) && (WP_19) && (WP_22) */
           12, 19, LC_RPN_AND, 22, LC_RPN_AND, LC_RPN_EQUAL}},
 
-    /* #15 If instrument temp b/ween 10C and 20C, start observing */
+    /* #16 If instrument temp b/ween 10C and 20C, start observing */
     {.DefaultState = LC_APSTATE_ACTIVE,
      .MaxPassiveEvents = 0,
      .MaxPassFailEvents = 0,
@@ -445,13 +445,13 @@ LC_ADTEntry_t LC_DefaultADT[LC_MAX_ACTIONPOINTS] = {
      .RTSId = WHE_OBS_START_CC,
      .MaxFailsBeforeRTS = 1,
      .EventType = CFE_EVS_INFORMATION,
-     .EventID = 0,
+     .EventID = 1016,
      .EventText = {"Start observation if instrument temp between 10C and 20C"},
      .RPNEquation =
          {/* (WP_14) && (WP_15) */
           14, 15, LC_RPN_AND, LC_RPN_EQUAL}},
 
-    /* #16 If instrument temp >20C during observation, stop observation */
+    /* #17 If instrument temp >20C during observation, stop observation */
     {.DefaultState = LC_APSTATE_ACTIVE,
      .MaxPassiveEvents = 0,
      .MaxPassFailEvents = 0,
@@ -459,13 +459,13 @@ LC_ADTEntry_t LC_DefaultADT[LC_MAX_ACTIONPOINTS] = {
      .RTSId = WHE_OBS_STOP_CC,
      .MaxFailsBeforeRTS = 1,
      .EventType = CFE_EVS_INFORMATION,
-     .EventID = 0,
+     .EventID = 1017,
      .EventText = {"Stop observation if instrument temp > 20C"},
      .RPNEquation =
          {/* (WP_16) && (WP_20) */
           16, 20, LC_RPN_AND, LC_RPN_EQUAL}},
 
-    /* #17 If instrument temp < 10C during observation, stop */
+    /* #18 If instrument temp < 10C during observation, stop */
     {.DefaultState = LC_APSTATE_ACTIVE,
      .MaxPassiveEvents = 0,
      .MaxPassFailEvents = 0,
@@ -473,7 +473,7 @@ LC_ADTEntry_t LC_DefaultADT[LC_MAX_ACTIONPOINTS] = {
      .RTSId = WHE_OBS_STOP_CC,
      .MaxFailsBeforeRTS = 1,
      .EventType = CFE_EVS_INFORMATION,
-     .EventID = 0,
+     .EventID = 1018,
      .EventText = {"Stop observation if instrument temp < 10C"},
      .RPNEquation =
          {/* (WP_13) && (WP_20) */
